@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def show
     set_post
   end
+  
 
   # GET /posts/new
   def new
