@@ -1,17 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>つぶやき一覧</h1>
+<%= link_to 'New Post', new_post_path %>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% #form_with(local: true, model: @post) do |form| %>
+<% #end %>
 
-  <tbody>
+    <table>
+      <thead>
+        <tr>
+          <th>投稿ID</th>
+          <th>投稿内容</th>
+          <th>投稿日</th>
+          <th colspan= "3"></th>
+
+        </tr>
+      </thead>
+
+
+<tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= post[:id] %></td>
+        <td><%= post[:content] %></td>
+        <td><%= post[:updated_at] %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
