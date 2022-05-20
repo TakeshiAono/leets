@@ -20,6 +20,8 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     set_post
+    
+    byebug
   end
 
   # POST /posts or /posts.json

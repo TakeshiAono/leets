@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_with(model: @post,local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.label :contet %>
+  <%= @post.content%>
+<% end %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'home', posts_path %>
