@@ -1,0 +1,10 @@
+<h1>投稿確認</h1>
+
+<%= form_with(model: @post,local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.label :contet %>
+  <%= @post.content%>
+  <>
+  <%= form.submit%>
+<% end %>
+
