@@ -4,7 +4,9 @@
   <%= form.hidden_field :content %>
   <%= form.label :contet %>
   <%= @post.content%>
-  <>
-  <%= form.submit%>
+  <%= form.submit "送信"%>
+  <%= form.submit "戻る", name: "back"%>
 <% end %>
+
+
 

@@ -15,18 +15,29 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+
   end
 
   # GET /posts/1/edit
   def edit
-    set_post
-    
-    byebug
+    set_post    
+
   end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.create(post_params)
+ 
+    @post = Post.new(post_params)
+    if params[:back]
+      render new_post_path
+
+    else
+        if @post.save
+          redirect_to posts_path, notice: "投稿しました"
+        else
+          render new_post_path, notice: "投稿できません"          
+        end
+    end
 
     # respond_to do |format|
     #   if @post.save
@@ -37,7 +48,8 @@ class PostsController < ApplicationController
     #     format.json { render json: @post.errors, status: :unprocessable_entity }
     #   end
     # end
-    redirect_to posts_path
+
+
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
