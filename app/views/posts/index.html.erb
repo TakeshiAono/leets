@@ -1,29 +1,43 @@
-<p id="notice"><%= notice %></p>
+<header>
+  <div>
+    <a class="top_link" href="">TOP</a>
+  </div>
+</header>
 
-<h1>つぶやき一覧</h1>
+<div class="content_wrapper">
+  <p id="notice"><%= notice %></p>
+  <div class="top_container">
+      <h1 class="top_title">つぶやき一覧</h1>
+      <p class="new_button"><%= link_to '投稿する', new_post_path %></p>
+  </div>
 
-<%= link_to 'New Post', new_post_path %>
-<table>
-  <thead>
-    <tr>
-      <th>投稿ID</th>
-      <th>投稿内容</th>
-      <th>投稿日</th>
-      <th colspan= "3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
+  <table align = "center" class="top_table" border="2" style="border-collapse: collapse; border-color: rgb(140, 0, 255)">
+    <thead class="head_table">
       <tr>
-        <td><%= post[:id] %></td>
-        <td><%= post[:content] %></td>
-        <td><%= post[:updated_at] %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>投稿ID</th>
+        <th>投稿内容</th>
+        <th>投稿日</th>
+        <th colspan= "3">詳細</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody  class="table_record">
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post[:id] %></td>
+          <td><%= post[:content] %></td>
+          <td><%= post[:updated_at] %></td>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
+<footer>
+  <div>
+    <p>🄫 Takeshi Aono</p>
+  </div>
+</footer>
 

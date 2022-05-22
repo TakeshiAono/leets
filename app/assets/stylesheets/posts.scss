@@ -1,3 +1,83 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+header {
+  background-color: rgb(238, 124, 124);
+  height: 100px;
+  display: flex;
+  align-items:center;
+  justify-content: left;
+}
+
+.top_link{
+  font-size: 50px;
+  color: black;
+  text-decoration: none;
+  margin-left: 30px;
+  border: solid;
+  border-radius: 10px;
+
+}
+
+.content_wrapper{
+  background-color: rgb(150, 93, 241);
+  padding: 50px;
+}
+
+.top_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_title {
+  text-align: left;
+  font-size: 50px;
+  justify-content: flex-start;
+
+}
+
+
+
+.new_button{
+  justify-content: flex-end;
+  font-size: 30px;
+  text-align: right;
+
+  
+}
+
+.new_button a {
+  bottom: 0;
+}
+
+.notice{
+  font-size: 100px;
+}
+
+.top_table{
+  background-color: rgb(221, 184, 221);
+}
+
+
+.head_table{
+  background-color: rgb(226, 150, 226);
+}
+
+.table_record{
+  background-color: rgb(255, 176, 255);
+}
+
+div {
+  text-align: center;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(69, 69, 151);
+  height: 80px;
+}
+
+footer p{
+  font-size: 20px;
+  color: white;
+}

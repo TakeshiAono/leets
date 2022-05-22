@@ -1,7 +1,7 @@
 <% @notice ? notice = @notice : %>
-<p><%= notice %></p>
+<p id="notice"><%= notice %></p>
 <% @post.errors.messages[:content].each do |error| %>
-<p><%= error %></p>
+<p id="notice"><%= error %></p>
 <% end %>
 
 <h1>つぶやき編集</h1>
