@@ -31,18 +31,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    byebug
     set_post
     # respond_to do |format|
-    end
+    # end
       if @post.update(post_params)
-        byebug
-        render "show", notice: '更新完了'#edit_post_path(@post[:id])#, 
+        @notice = "更新完了"
+        render "show"#edit_post_path(@post[:id])#, 
         # format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
         # format.json { render :show, status: :ok, location: @post }
       else
-        byebug
-        render "edit", notice: '更新エラー'#edit_post_path(@post[:id])#
+        @notice = "更新エラー"
+        render "edit"#edit_post_path(@post[:id])#
 
         # format.html { render :edit, status: :unprocessable_entity }
         # format.json { render json: @post.errors, status: :unprocessable_entity }
