@@ -6,8 +6,6 @@
     <%end%>
   <%end%>
 
-
-
 <h1>つぶやき投稿</h1>
 
 <%= form_with(model:@post, local: true, url: "/posts/confirm") do |f|%>
@@ -15,7 +13,5 @@
   <%= f.text_field :content%>
   <%= f.submit %>
 <% end %>
-
-<%#=  render 'form', post: @post %>
 
 <%= link_to 'Back', posts_path %>

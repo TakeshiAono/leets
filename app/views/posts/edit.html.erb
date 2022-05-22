@@ -3,10 +3,10 @@
 <% @post.errors.messages[:content].each do |error| %>
 <p><%= error %></p>
 <% end %>
+
 <h1>つぶやき編集</h1>
 
 <%= form_with(model: @post,local: true) do |form| %>
-
   <%= form.hidden_field :content %>
   <%= form.label :contet %>
   <%= @post.content%>

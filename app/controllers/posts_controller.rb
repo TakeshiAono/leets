@@ -32,21 +32,13 @@ class PostsController < ApplicationController
 
   def update
     set_post
-    # respond_to do |format|
-    # end
       if @post.update(post_params)
         @notice = "更新完了"
-        render "show"#edit_post_path(@post[:id])#, 
-        # format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
-        # format.json { render :show, status: :ok, location: @post }
+        render "show"
       else
         @notice = "更新エラー"
-        render "edit"#edit_post_path(@post[:id])#
-
-        # format.html { render :edit, status: :unprocessable_entity }
-        # format.json { render json: @post.errors, status: :unprocessable_entity }
+        render "edit"
       end
-    # end
   end
 
   def destroy
