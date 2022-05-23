@@ -1,14 +1,10 @@
-<header>
-  <div>
-    <a class="top_link" href="">TOP</a>
-  </div>
-</header>
+<%= render partial: "header"%>
 
 <div class="content_wrapper">
   <p id="notice"><%= notice %></p>
   <div class="top_container">
-      <h1 class="top_title">つぶやき一覧</h1>
-      <p class="new_button"><%= link_to '投稿する', new_post_path %></p>
+    <h1 class="top_title">つぶやき一覧</h1>
+    <p class="new_button"><%= link_to '投稿する', new_post_path %></p>
   </div>
 
   <table align = "center" class="top_table" border="2" style="border-collapse: collapse; border-color: rgb(140, 0, 255)">
@@ -35,9 +31,4 @@
   </table>
 </div>
 
-<footer>
-  <div>
-    <p>🄫 Takeshi Aono</p>
-  </div>
-</footer>
-
+<%= render partial: "footer"%>

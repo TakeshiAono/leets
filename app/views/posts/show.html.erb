@@ -1,12 +1,16 @@
-<% @notice ? notice = @notice : %>
-<p id="notice"><%= notice %></p>
+<%= render partial: "header"%>
+<div class="content_wrapper">
+  <% @notice ? notice = @notice : %>
+  <p id="notice"><%= notice %></p>
 
-<%= form_with(model: @post,local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.label :contet %>
-  <%= @post.content%>
-<% end %>
+  <%= form_with(model: @post,local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.label :contet %>
+    <%= @post.content%>
+  <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> 
-<%= link_to 'home', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %> 
+  <%= link_to 'home', posts_path %>
+</div>
 
+<%= render partial: "footer"%>

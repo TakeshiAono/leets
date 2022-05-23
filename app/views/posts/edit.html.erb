@@ -1,18 +1,23 @@
-<% @notice ? notice = @notice : %>
-<p id="notice"><%= notice %></p>
-<% @post.errors.messages[:content].each do |error| %>
-<p id="notice"><%= error %></p>
-<% end %>
+<%= render partial: "header"%>
+<div class="content_wrapper">
+  <% @notice ? notice = @notice : %>
+  <p id="notice"><%= notice %></p>
+  <% @post.errors.messages[:content].each do |error| %>
+  <p id="notice"><%= error %></p>
+  <% end %>
 
-<h1>つぶやき編集</h1>
+  <h1>つぶやき編集</h1>
 
-<%= form_with(model: @post,local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.label :contet %>
-  <%= @post.content%>
-  <%= form.text_field :content %>
-  <%= form.submit %>
-<% end %>
+  <%= form_with(model: @post,local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.label :contet %>
+    <%= @post.content%>
+    <%= form.text_field :content %>
+    <%= form.submit %>
+  <% end %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Show', @post %> |
+  <%= link_to 'Back', posts_path %>
+</div>
+
+<%= render partial: "footer"%>

@@ -1,17 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "header"%>
+<div class="content_wrapper">
+  <p id="notice"><%= notice %></p>
 
-  <% @post.errors.messages.each do |a,b| %>
-    <% b.each do |error| %>
-      <p id="notice"><%= error %><p>
+    <% @post.errors.messages.each do |a,b| %>
+      <% b.each do |error| %>
+        <p id="notice"><%= error %><p>
+      <%end%>
     <%end%>
-  <%end%>
 
-<h1>つぶやき投稿</h1>
+  <h1>つぶやき投稿</h1>
 
-<%= form_with(model:@post, local: true, url: "/posts/confirm") do |f|%>
-  <%= f.label :content %>
-  <%= f.text_field :content%>
-  <%= f.submit %>
-<% end %>
+  <%= form_with(model:@post, local: true, url: "/posts/confirm") do |f|%>
+    <%= f.label :content %>
+    <%= f.text_field :content%>
+    <%= f.submit %>
+  <% end %>
 
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Back', posts_path %>
+</div>
+
+<%= render partial: "footer"%>

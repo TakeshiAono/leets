@@ -1,12 +1,16 @@
-<h1>投稿確認</h1>
+<%= render partial: "header"%>
+<div class="content_wrapper">
+  <h1>投稿確認</h1>
 
-<%= form_with(model: @post,local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.label :contet %>
-  <%= @post.content%>
-  <%= form.submit "送信"%>
-  <%= form.submit "戻る", name: "back"%>
-<% end %>
+  <%= form_with(model: @post,local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.label :contet %>
+    <%= @post.content%>
+    <%= form.submit "送信"%>
+    <%= form.submit "戻る", name: "back"%>
+  <% end %>
+</div>
 
+<%= render partial: "footer"%>
 
 
